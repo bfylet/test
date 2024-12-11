@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lexend', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: #33475b;
+            background-color: #f5f8fa;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header styles */
+        .page-header {
+            background: white;
+            padding: 60px 0;
+            text-align: center;
+            border-bottom: 1px solid #e5e8eb;
+        }
+
+        .page-header h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #2d3748;
+        }
+
+        .page-header p {
+            font-size: 18px;
+            color: #718096;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Format grid styles */
+        .formats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+            padding: 60px 0;
+        }
+
+        .format-card {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 30px;
+        }
+
+        .format-card h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #2d3748;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #ff7a59;
+        }
+
+        .format-type {
+            margin-bottom: 25px;
+        }
+
+        .format-type h3 {
+            font-size: 18px;
+            color: #4a5568;
+            margin-bottom: 10px;
+        }
+
+        .format-type ul {
+            list-style: none;
+            margin-left: 15px;
+        }
+
+        .format-type li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+            color: #718096;
+        }
+
+        .format-type li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #ff7a59;
+        }
+
+        /* Slider section styles */
+        .complexity-section {
+            background: white;
+            padding: 60px 0;
+            margin-top: 40px;
+        }
+
+        .complexity-section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 40px;
+            color: #2d3748;
+        }
+
+        .formats-container {
+            max-width: 1400px;
+            margin: 40px auto;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .format-slider {
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            background: white;
+        }
+
+        .slider-title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #2D3748;
+        }
+
+        .slider-input {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        .metrics-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .metric-card {
+            background: #F7FAFC;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        .metric-title {
+            font-weight: bold;
+            color: #4A5568;
+            margin-bottom: 5px;
+        }
+
+        .details-container {
+            background: #F7FAFC;
+            padding: 15px;
+            border-radius: 6px;
+            margin-top: 15px;
+        }
+
+        .production-level {
+            font-size: 18px;
+            font-weight: bold;
+            color: #4299E1;
+            margin: 10px 0;
+            text-align: center;
+        }
+
+        .web-videos { border-top: 4px solid #4299E1; }
+        .campaign-videos { border-top: 4px solid #9F7AEA; }
+        .customer-stories { border-top: 4px solid #ED8936; }
+
+        /* Responsive design */
+        @media (max-width: 1024px) {
+            .formats-grid,
+            .formats-container {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .format-card {
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Page Header -->
+    <header class="page-header">
+        <div class="container">
+            <h1>Video Format Guide</h1>
+            <p>A comprehensive guide to HubSpot's video formats, production levels, and budget considerations</p>
+        </div>
+    </header>
+
+    <!-- Format Cards Grid -->
+    <div class="container">
+        <div class="formats-grid">
+            <!-- Web Videos -->
+            <div class="format-card">
+                <h2>Web Videos</h2>
+                <div class="format-type">
+                    <h3>Core Page Videos</h3>
+                    <ul>
+                        <li>Homepage and hub pages</li>
+                        <li>Premium production value</li>
+                        <li>Professional VO and graphics</li>
+                        <li>Multiple revision rounds</li>
+                    </ul>
+                </div>
+                <div class="format-type">
+                    <h3>Web Animations</h3>
+                    <ul>
+                        <li>Feature demonstrations</li>
+                        <li>UI walkthroughs</li>
+                        <li>Custom motion graphics</li>
+                        <li>Screen recordings</li>
+                    </ul>
+                </div>
+                <div class="format-type">
+                    <h3>Product Deep Dives</h3>
+                    <ul>
+                        <li>Feature explanations</li>
+                        <li>Technical demos</li>
+                        <li>Quick turnaround</li>
+                        <li>Basic graphics</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Campaign Videos -->
+            <div class="format-card">
+                <h2>Campaign Videos</h2>
+                <div class="format-type">
+                    <h3>Thought Leadership</h3>
+                    <ul>
+                        <li>Executive presentations</li>
+                        <li>Industry insights</li>
+                        <li>Professional filming</li>
+                        <li>Quick turnaround</li>
+                    </ul>
+                </div>
+                <div class="format-type">
+                    <h3>Announcements</h3>
+                    <ul>
+                        <li>Product launches</li>
+                        <li>Event promotions</li>
+                        <li>Custom graphics</li>
+                        <li>Multiple platforms</li>
+                    </ul>
+                </div>
+                <div class="format-type">
+                    <h3>Core Campaign</h3>
+                    <ul>
+                        <li>Premium production</li>
+                        <li>Multiple locations</li>
+                        <li>Advanced post-production</li>
+                        <li>Full creative package</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Customer Stories -->
+            <div class="format-card">
+                <h2>Customer Stories</h2>
+                <div class="format-type">
+                    <h3>Proof Animations</h3>
+                    <ul>
+                        <li>Data visualization</li>
+                        <li>Success metrics</li>
+                        <li>Quick turnaround</li>
+                        <li>Simple graphics</li>
+                    </ul>
+                </div>
+                <div class="format-type">
+                    <h3>Testimonials</h3>
+                    <ul>
+                        <li>Customer interviews</li>
+                        <li>Single location</li>
+                        <li>Professional filming</li>
+                        <li>Basic graphics</li>
+                    </ul>
+                </div>
+                <div class="format-type">
+                    <h3>Story Videos</h3>
+                    <ul>
+                        <li>Multiple locations</li>
+                        <li>Premium production</li>
+                        <li>Advanced storytelling</li>
+                        <li>Full package delivery</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Complexity Sliders Section -->
+    <section class="complexity-section">
+        <div class="container">
+            <h2>Production Complexity & Budget Guide</h2>
+            <div class="formats-container">
+                <!-- Web Videos Slider -->
+                <div class="format-slider web-videos" id="webVideoSlider">
+                    <div class="slider-title">Web Videos</div>
+                    <input type="range" min="1" max="4" value="2" class="slider-input" id="webVideoRange">
+                    <div class="production-level" id="webVideoLevel"></div>
+                    <div class="metrics-container">
+                        <div class="metric-card">
+                            <div class="metric-title">Starting At</div>
+                            <div id="webVideoBudget"></div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">Timeline</div>
+                            <div id="webVideoTimeline"></div>
+                        </div>
+                    </div>
+                    <div class="details-container">
+                        <div class="metric-title">Production Details</div>
+                        <div id="webVideoDetails"></div>
+                    </div>
+                </div>
+
+                <!-- Campaign Videos Slider -->
+                <div class="format-slider campaign-videos" id="campaignVideoSlider">
+                    <div class="slider-title">Campaign Videos</div>
+                    <input type="range" min="1" max="3" value="2" class="slider-input" id="campaignVideoRange">
+                    <div class="production-level" id="campaignVideoLevel"></div>
+                    <div class="metrics-container">
+                        <div class="metric-card">
+                            <div class="metric-title">Starting At</div>
+                            <div id="campaignVideoBudget"></div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">Timeline</div>
+                            <div id="campaignVideoTimeline"></div>
+                        </div>
+                    </div>
+                    <div class="details-container">
+                        <div class="metric-title">Production Details</div>
+                        <div id="campaignVideoDetails"></div>
+                    </div>
+                </div>
+
+                <!-- Customer Stories Slider -->
+                <div class="format-slider customer-stories" id="customerStorySlider">
+                    <div class="slider-title">Customer Stories</div>
+                    <input type="range" min="1" max="3" value="2" class="slider-input" id="customerStoryRange">
+                    <div class="production-level" id="customerStoryLevel"></div>
+                    <div class="metrics-container">
+                        <div class="metric-card">
+                            <div class="metric-title">Starting At</div>
+                            <div id="customerStoryBudget"></div>
+                        </div>
+                        <div class="metric-card">
+                            <div class="metric-title">Timeline</div>
+                            <div id="customerStoryTimeline"></div>
+                        </div>
+                    </div>
+                    <div class="details-container">
+                        <div class="metric-title">Production Details</div>
+                        <div id="customerStoryDetails"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- JavaScript for sliders -->
+    <script>
+        const formatConfigs = {
+            webVideo: {
+                levels: [
+                    'Product Deep Dive / Simple Animation',
+                    'Animated Demo / Use Case',
+                    'Complex Web Animation',
+                    'Core Page Video'
+                ],
+                budgetRanges: {
+                    level1: '500+',
+                    level2: '2,000+',
+                    level3: '5,000+',
+                    level4: '15,000+'
+                },
+                timelines: {
+                    level1: '1-2 weeks',
+                    level2: '2-3 weeks',
+                    level3: '3-4 weeks',
+                    level4: '4-6 weeks'
+                },
+                details: {
+                    level1: [
+                        'Screen recording or simple animation',
+                        'Basic motion graphics',
+                        'Simple editing',
+                        'Quick turnaround'
+                    ],
+                    level2: [
+                        'Custom animation sequences',
+                        'Professional voiceover',
+                        'Motion graphics',
+                        '2 revision rounds'
+                    ],
+                    level3: [
+                        'Complex animation',
+                        'Advanced motion design',
+                        'Custom illustrations',
+                        'Multiple revisions'
+                    ],
+                    level4: [
+                        'Premium production value',
+                        'Advanced motion graphics',
+                        'Custom music & sound design',
+                        'Full creative treatment'
+                    ]
+                }
+            },
+            campaignVideo: {
+                levels: [
+                    'Thought Leadership Video',
+                    'Announcement/Simple Teaser',
+                    'Core Campaign Video'
+                ],
+                budgetRanges: {
+                    level1: '2,000+',
+                    level2: '5,000+',
+                    level3: '15,000+'
+                },
+                timelines: {
+                    level1: '2-3 weeks',
+                    level2: '3-4 weeks',
+                    level3: '4-6 weeks'
+                },
+                details: {
+                    level1: [
+                        'Single location shoot',
+                        'Basic camera setup',
+                        'Simple editing',
+                        'Quick turnaround'
+                    ],
+                    level2: [
+                        'Professional filming',
+                        'Motion graphics',
+                        'Custom music',
+                        'Multiple revisions'
+                    ],
+                    level3: [
+                        'Premium production',
+                        'Multiple shooting days',
+                        'Advanced post-production',
+                        'Full creative package'
+                    ]
+                }
